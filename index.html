@@ -1013,6 +1013,8 @@
 
             section { padding: 60px 24px; }
             .hero { padding: 100px 24px 60px; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .hero-buttons .btn { width: 100%; justify-content: center; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .hex-frame { width: 240px; height: 240px; }
             .hex-content .years { font-size: 40px; }
@@ -1029,8 +1031,20 @@
             }
             .skills-grid { grid-template-columns: 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
-            .about-stats { grid-template-columns: repeat(3, 1fr); }
-            .cursor-dot, .cursor-ring { display: none; }
+            .about-stats { grid-template-columns: 1fr; gap: 16px; }
+            .cert-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .cursor-dot, .cursor-ring { display: none !important; }
+        }
+        
+        /* Disable hover effects on touch devices */
+        @media (hover: none) {
+            .stat-card:hover, .timeline-card:hover, .skill-category:hover, .project-card:hover, .cert-card:hover, .contact-card:hover {
+                transform: none;
+                box-shadow: none;
+                border-color: rgba(0,240,255,0.08);
+            }
+            .skill-category::before { display: none; }
         }
     </style>
 </head>
